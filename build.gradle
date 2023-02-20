@@ -20,8 +20,10 @@ repositories {
 jar {
     archiveBaseName = 'caesar-cipher'
     manifest {
-        attributes 'Implementation-Title': 'Caesar cipher',
-                   'Main-Class': 'caesars.cipher.Main'
+        attributes #'Implementation-Title': 'Caesar cipher',
+                   #'Main-Class': 'caesars.cipher.Main'
+		   'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+      		   'Main-Class': 'caesars.cipher.Main'
     }
 }
 dependencies {
